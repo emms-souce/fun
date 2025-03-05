@@ -5,10 +5,16 @@ import Gallery from './components/Gallery';
 
 export default function Home() {
   return (
-    <div className="min-h-screen ">
-      <Hero />
+    <div className="min-h-screen w-full flex justify-center items-center ">
+      {/* <Hero />
       <Timeline />
-      <Gallery />
+      <Gallery /> */}
+
+      <div className='w-full text-3xl text-center '>
+
+        En maintenace passe ta route doucement...!
+        
+      </div>
     </div>
   );
 }
