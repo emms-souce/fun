@@ -131,7 +131,7 @@ const Hero = () => {
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Attention: Note insuffisante! Il faut s&apos;améliorer...
+              Attention: Note insuffisante! Il faut s'améliorer...
             </motion.div>
           )}
           <h2 className="text-xl md:text-2xl font-bold mb-2 gradient-text">{partner1.name}</h2>
@@ -190,18 +190,10 @@ const Hero = () => {
           </div>
           <motion.button
             className="px-6 py-3 rounded-full text-white font-semibold mb-4 shadow-lg hover:shadow-xl transition-all duration-500 gradient-text bg-white/10 backdrop-blur-sm"
-            style={{
-              background: `linear-gradient(135deg, ${partner2.favoriteColor}, ${partner2.favoriteColor}90)`
-            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              const newClicks = partner2Clicks + 1;
-              setPartner2Clicks(newClicks);
-              if (newClicks === 3) {
-                setShowPartner2Score(true);
-                setPartner2Clicks(0);
-              }
+              setShowPartner2Score(!showPartner2Score);
             }}
           >
             {showPartner2Score ? `${partner2Score}/20` : 'Voir la note'}
@@ -213,7 +205,7 @@ const Hero = () => {
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Attention: Note insuffisante! Il faut s&apos;améliorer c&apos;est tres dangereux ...
+              Attention: Note insuffisante! Il faut s'améliorer c'est tres dangereux ...
             </motion.div>
           )}
           <h2 className="text-2xl font-bold mb-2">{partner2.name}</h2>
