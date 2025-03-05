@@ -84,7 +84,7 @@ const Gallery = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e :any) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               <h3 className="text-2xl font-bold mb-4">{relationship.favoriteMemories[selectedMemory]}</h3>
               <div className="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 mb-4 rounded-lg overflow-hidden">
@@ -99,7 +99,7 @@ const Gallery = () => {
                 </div>
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                C'est un souvenir spécial que nous chérissons. Chaque moment passé ensemble enrichit notre belle histoire.
+                C&apos;est un souvenir spécial que nous chérissons. Chaque moment passé ensemble enrichit notre belle histoire.
               </p>
               <div className="flex justify-end">
                 <motion.button 

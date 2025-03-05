@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, Variants } from 'framer-motion';
 import coupleData from '@/data/couple.json';
 
 const Timeline = () => {
@@ -118,7 +118,7 @@ interface TimelineItemProps {
   date?: string;
   content: React.ReactNode;
   position: 'left' | 'right';
-  variants?: any;
+  variants?: Variants;
 }
 
 const TimelineItem = ({ title, date, content, position, variants }: TimelineItemProps) => {

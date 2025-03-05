@@ -20,7 +20,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          Je suis d'abord bon ma coucoue!!!
+          Je suis d&apos;abord bon ma coucoue!!!
         </motion.span>
       </motion.h1>
       <Hero />
