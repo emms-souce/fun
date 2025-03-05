@@ -9,7 +9,6 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const [partner1Clicks, setPartner1Clicks] = useState(0);
-  const [partner2Clicks, setPartner2Clicks] = useState(0);
   const [showPartner1Score, setShowPartner1Score] = useState(false);
   const [showPartner2Score, setShowPartner2Score] = useState(false);
   const [showPartner1Facts, setShowPartner1Facts] = useState(false);
@@ -131,7 +130,7 @@ const Hero = () => {
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Attention: Note insuffisante! Il faut s'améliorer...
+              Attention: Note insuffisante! Il faut s&apos;améliorer...
             </motion.div>
           )}
           <h2 className="text-xl md:text-2xl font-bold mb-2 gradient-text">{partner1.name}</h2>
@@ -205,7 +204,7 @@ const Hero = () => {
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Attention: Note insuffisante! Il faut s'améliorer c'est tres dangereux ...
+              Attention: Note insuffisante! Il faut s&apos;améliorer...
             </motion.div>
           )}
           <h2 className="text-2xl font-bold mb-2">{partner2.name}</h2>
