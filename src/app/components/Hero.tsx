@@ -131,7 +131,7 @@ const Hero = () => {
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Attention: Note insuffisante! Il faut s'améliorer...
+              Attention: Note insuffisante! Il faut s&apos;améliorer...
             </motion.div>
           )}
           <h2 className="text-xl md:text-2xl font-bold mb-2 gradient-text">{partner1.name}</h2>
@@ -213,7 +213,7 @@ const Hero = () => {
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Attention: Note insuffisante! Il faut s'améliorer c'est tres dangereux ...
+              Attention: Note insuffisante! Il faut s&apos;améliorer c&apos;est tres dangereux ...
             </motion.div>
           )}
           <h2 className="text-2xl font-bold mb-2">{partner2.name}</h2>
