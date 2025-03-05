@@ -1,0 +1,30 @@
+{
+  "couple": {
+    "partner1": {
+      "name": "Le Gonzomor",
+      "age": 25,
+      "occupation": "Je joue au djambo pour vivre",
+      "hobbies": ["djambo", "code", "musique"],
+      "favoriteColor": "red",
+      "avatar": "/boy.webp"
+    },
+    "partner2": {
+      "name": "Rose",
+      "age": 21,
+      "occupation": "Communicante",
+      "hobbies": ["Sortie", "Voyage", "Lecture"],
+      "favoriteColor": "blue",
+      "avatar": "/girl.avif"
+    },
+    "relationship": {
+      "anniversary": "2024-12-23",
+      "meetingStory": "Nous nous sommes rencontrés quelque part dans le monde et c'était trèèèèèèsssss intéressant",
+      "sharedInterests": ["Se disputer", "Mimba", "Combattre"],
+      "favoriteMemories": [
+        "Premier contact",
+        "Première dispute",
+        "Première visite (elle voulait voir si je suis un blagueur)"
+      ]
+    }
+  }
+}
