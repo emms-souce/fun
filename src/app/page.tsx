@@ -12,7 +12,7 @@ export default function Home() {
 
       <div className='w-full text-3xl text-center '>
 
-        En maintenace passe ta route doucement...!
+        En maintenance passe ta route doucement...!
         
       </div>
     </div>
