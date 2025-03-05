@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <div className="min-h-screen ">
-      <motion.h1 
+      {/* <motion.h1 
         className="text-4xl md:text-5xl font-bold text-center py-8 bg-gradient-to-r from-[#09ed68] via-[#00d0ff] to-[#d71e09] text-transparent bg-clip-text"
         initial={{ opacity: 0, y: -20, scale: 0.9 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -22,7 +22,7 @@ export default function Home() {
         >
           Je suis d&apos;abord bon ma coucoue!!!
         </motion.span>
-      </motion.h1>
+      </motion.h1> */}
       <Hero />
       <Timeline />
       <Gallery />

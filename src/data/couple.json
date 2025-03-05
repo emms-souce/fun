@@ -6,25 +6,44 @@
       "occupation": "Je joue au djambo pour vivre",
       "hobbies": ["djambo", "code", "musique"],
       "favoriteColor": "red",
-      "avatar": "/boy.webp"
+      "avatar": "/boy.webp",
+      "funFacts": [
+        "Je peux jouer du djambo pendant 24h sans m'arrêter",
+        "J'ai appris à coder en regardant des tutoriels YouTube à 3x la vitesse",
+        "Ma plus grande fierté ? Avoir fait rire Rose au premier rendez-vous"
+      ],
+      "secretTalent": "Je peux imiter parfaitement le bruit d'un ventilateur en panne"
     },
     "partner2": {
       "name": "Rose",
       "age": 21,
-      "occupation": "Communicante",
+      "occupation": "Elle fait dans la communication",
       "hobbies": ["Sortie", "Voyage", "Lecture"],
       "favoriteColor": "blue",
-      "avatar": "/girl.avif"
+      "avatar": "/girl.avif",
+      "funFacts": [
+        "Je peux lire un livre entier en une seule nuit",
+        "J'ai visité 5 pays en un mois juste pour le plaisir",
+        "Je collectionne secrètement les photos ratées du Gonzomor"
+      ],
+      "secretTalent": "Je peux deviner l'humeur du Gonzomor rien qu'en voyant sa façon de marcher"
     },
     "relationship": {
       "anniversary": "2024-12-23",
-      "meetingStory": "Nous nous sommes rencontrés quelque part dans le monde et c'était trèèèèèèsssss intéressant",
-      "sharedInterests": ["Se disputer", "Mimba", "Combattre"],
+      "meetingStory": "Notre première rencontre était un véritable désastre comique ! J'étais en retard de 30 minutes à cause d'un embouteillage, et Rose avait commandé tous les desserts du menu par ennui. Finalement, on a passé la soirée à rire de cette situation absurde.",
+      "sharedInterests": ["Se chamailler pour rire", "Inventer des histoires folles", "Danser n'importe comment", "Créer des moments inoubliables"],
       "favoriteMemories": [
-        "Premier contact",
-        "Première dispute",
-        "Première visite (elle voulait voir si je suis un blagueur)"
+        "Le jour où on s'est perdu en ville et on a découvert le meilleur restaurant de notre vie",
+        "Notre première dispute qui s'est terminée en fou rire quand on a réalisé qu'on se disputait pour une pizza",
+        "La fois où Rose a essayé de m'apprendre à danser et j'ai cassé une lampe",
+        "Notre voyage improvisé qui s'est transformé en aventure épique"
+      ],
+      "funnyMoments": [
+        "La fois où j'ai essayé d'impressionner Rose avec mes talents de cuisine et j'ai déclenché l'alarme incendie",
+        "Quand Rose a tenté de me surprendre avec un gâteau fait maison qui ressemblait plus à une expérience scientifique",
+        "Notre premier karaoké ensemble où on a massacré 'Je te promets' de Johnny"
       ]
+      
     }
   }
 }

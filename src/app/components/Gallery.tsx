@@ -42,7 +42,7 @@ const Gallery = () => {
           {relationship.favoriteMemories.map((memory, index) => (
             <motion.div 
               key={index}
-              className="relative cursor-pointer rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 touch-manipulation w-full bg-gradient-to-r p-[2px] from-[#2ecc71] via-[#ffd700] to-[#e74c3c]"
+              className="relative cursor-pointer rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation w-full bg-gradient-to-r p-[2px] from-[var(--primary)] via-[var(--accent)] to-[var(--secondary)]"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: index * 0.2 }}
@@ -80,7 +80,7 @@ const Gallery = () => {
             onClick={() => setSelectedMemory(null)}
           >
             <motion.div 
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg max-w-2xl w-full shadow-xl"
+              className="bg-white/90 dark:bg-gray-800/90 p-6 rounded-lg max-w-2xl w-full shadow-xl backdrop-blur-md border border-white/20"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -103,7 +103,7 @@ const Gallery = () => {
               </p>
               <div className="flex justify-end">
                 <motion.button 
-                  className="px-4 py-2 bg-gradient-to-r from-[#2ecc71] via-[#ffd700] to-[#e74c3c] text-white rounded-lg shadow-md hover:shadow-lg"
+                  className="px-4 py-2 bg-gradient-to-r from-[var(--primary)] via-[var(--accent)] to-[var(--secondary)] text-white rounded-lg shadow-md hover:shadow-lg backdrop-blur-sm"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedMemory(null)}

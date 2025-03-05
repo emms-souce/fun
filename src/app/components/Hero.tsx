@@ -12,6 +12,10 @@ const Hero = () => {
   const [partner2Clicks, setPartner2Clicks] = useState(0);
   const [showPartner1Score, setShowPartner1Score] = useState(false);
   const [showPartner2Score, setShowPartner2Score] = useState(false);
+  const [showPartner1Facts, setShowPartner1Facts] = useState(false);
+  const [showPartner2Facts, setShowPartner2Facts] = useState(false);
+  const [partner1Score] = useState(20);
+  const [partner2Score] = useState(9);
   const { partner1, partner2, relationship } = coupleData.couple;
 
   useEffect(() => {
@@ -66,7 +70,7 @@ const Hero = () => {
 
   return (
     <motion.section
-      className="flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 overflow-x-hidden space-y-8"
+      className="flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 overflow-x-hidden space-y-8 glass-effect"
       initial="hidden"
       animate={isVisible ? 'visible' : 'hidden'}
       variants={containerVariants}
@@ -77,8 +81,11 @@ const Hero = () => {
           className="flex-1 text-center md:text-left w-full md:w-auto"
           variants={itemVariants}
         >
-          <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 mb-6 rounded-full overflow-hidden border-4 shadow-lg animate-pulse animate-infinite hover:animate-none transition-all duration-500 bg-gradient-to-r p-[3px] from-[#2ecc71] via-[#ffd700] to-[#e74c3c]"
-               style={partner1Style}>
+          <div 
+            className="relative w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 mb-6 rounded-full overflow-hidden border-4 shadow-lg hover-lift transition-all duration-500 bg-gradient-to-r p-[3px] from-[var(--primary)] via-[var(--accent)] to-[var(--secondary)]"
+            style={partner1Style}
+            onClick={() => setShowPartner1Facts(!showPartner1Facts)}
+          >
             <div className="absolute inset-[3px] rounded-full overflow-hidden">
               <Image
                 src={partner1.avatar}
@@ -87,24 +94,47 @@ const Hero = () => {
                 className="object-cover"
               />
             </div>
+            {showPartner1Facts && (
+              <motion.div 
+                className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center p-4 text-white text-sm"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <p className="font-bold mb-2">Fun Facts:</p>
+                {partner1.funFacts.map((fact, index) => (
+                  <p key={index} className="mb-1 text-xs">{fact}</p>
+                ))}
+                <p className="mt-2 text-xs font-semibold">Talent Secret: {partner1.secretTalent}</p>
+              </motion.div>
+            )}
           </div>
           <motion.button
-            className="px-4 py-2 rounded-full text-white font-semibold mb-4 shadow-lg hover:shadow-xl transition-all duration-500"
-           
+            className="px-6 py-3 rounded-full text-white font-semibold mb-4 shadow-lg hover:shadow-xl transition-all duration-500 gradient-text bg-white/10 backdrop-blur-sm"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
               const newClicks = partner1Clicks + 1;
               setPartner1Clicks(newClicks);
-              if (newClicks === 3) {
+              if (newClicks === 2) {
                 setShowPartner1Score(true);
                 setPartner1Clicks(0);
               }
             }}
           >
-            {showPartner1Score ? '--/20' : 'Voir la note'}
+            {showPartner1Score ? `${partner1Score}/20` : 'Voir la note'}
           </motion.button>
-          <h2 className="text-xl md:text-2xl font-bold mb-2">{partner1.name}</h2>
+          {showPartner1Score && partner1Score < 10 && (
+            <motion.div
+              className="text-red-500 text-sm font-semibold mt-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              Attention: Note insuffisante! Il faut s'améliorer...
+            </motion.div>
+          )}
+          <h2 className="text-xl md:text-2xl font-bold mb-2 gradient-text">{partner1.name}</h2>
           <p className="text-base md:text-lg mb-2">{partner1.occupation}</p>
           <div className="flex flex-wrap justify-center md:justify-start gap-2">
             {partner1.hobbies.map((hobby, index) => (
@@ -123,15 +153,18 @@ const Hero = () => {
           className="text-center py-8"
           variants={itemVariants}
         >
-          <p className="text-lg font-medium mb-4">{relationship.meetingStory}</p>
+          <p className="text-lg font-medium mb-4 glass-effect p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">{relationship.meetingStory}</p>
         </motion.div>
 
         <motion.div
           className="flex-1 text-center md:text-right"
           variants={itemVariants}
         >
-          <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 md:ml-auto mb-6 rounded-full overflow-hidden border-4 shadow-lg animate-pulse animate-infinite hover:animate-none transition-all duration-500 bg-gradient-to-r p-[3px] from-[#2ecc71] via-[#ffd700] to-[#e74c3c]"
-               style={partner2Style}>
+          <div 
+            className="relative w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 md:ml-auto mb-6 rounded-full overflow-hidden border-4 shadow-lg animate-pulse animate-infinite hover:animate-none transition-all duration-500 bg-gradient-to-r p-[3px] from-[#2ecc71] via-[#ffd700] to-[#e74c3c]"
+            style={partner2Style}
+            onClick={() => setShowPartner2Facts(!showPartner2Facts)}
+          >
             <div className="absolute inset-[3px] rounded-full overflow-hidden">
               <Image
                 src={partner2.avatar}
@@ -140,9 +173,23 @@ const Hero = () => {
                 className="object-cover"
               />
             </div>
+            {showPartner2Facts && (
+              <motion.div 
+                className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center p-4 text-white text-sm"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <p className="font-bold mb-2">Fun Facts:</p>
+                {partner2.funFacts.map((fact, index) => (
+                  <p key={index} className="mb-1 text-xs">{fact}</p>
+                ))}
+                <p className="mt-2 text-xs font-semibold">Talent Secret: {partner2.secretTalent}</p>
+              </motion.div>
+            )}
           </div>
           <motion.button
-            className="px-4 py-2 rounded-full text-white font-semibold mb-4 shadow-lg hover:shadow-xl transition-all duration-500"
+            className="px-6 py-3 rounded-full text-white font-semibold mb-4 shadow-lg hover:shadow-xl transition-all duration-500 gradient-text bg-white/10 backdrop-blur-sm"
             style={{
               background: `linear-gradient(135deg, ${partner2.favoriteColor}, ${partner2.favoriteColor}90)`
             }}
@@ -157,8 +204,18 @@ const Hero = () => {
               }
             }}
           >
-            {showPartner2Score ? '--/20' : 'Voir la note'}
+            {showPartner2Score ? `${partner2Score}/20` : 'Voir la note'}
           </motion.button>
+          {showPartner2Score && partner2Score < 12 && (
+            <motion.div
+              className="text-red-500 text-sm font-semibold mt-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              Attention: Note insuffisante! Il faut s'améliorer c'est tres dangereux ...
+            </motion.div>
+          )}
           <h2 className="text-2xl font-bold mb-2">{partner2.name}</h2>
           <p className="text-lg mb-2">{partner2.occupation}</p>
           <div className="flex flex-wrap justify-center md:justify-end gap-2">
